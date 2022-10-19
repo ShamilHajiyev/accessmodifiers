@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace ConsoleApp2
 {
@@ -19,11 +17,11 @@ namespace ConsoleApp2
 
         public void AddStudent(Student addedStudent)
         {
-            if (StudentGroup.Length <= Limit)
+            if (StudentGroup.Length < Limit)
             {
                 Array.Resize(ref StudentGroup, StudentGroup.Length + 1);
                 StudentGroup[StudentGroup.Length - 1] = addedStudent;
-                Console.WriteLine($"{addedStudent.Name} added to {No}");
+                Console.WriteLine($"{addedStudent.Name} {addedStudent.Surname} added to {No}");
             }
             else
             {
@@ -38,6 +36,5 @@ namespace ConsoleApp2
                 Console.WriteLine($"{student.Name} {student.Surname}");
             }
         }
-
     }
 }
